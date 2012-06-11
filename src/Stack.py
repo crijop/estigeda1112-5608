@@ -5,15 +5,17 @@
 @data: 28/06/2012
 '''
 
-'''
-Class Stack
-'''
+
+#Class Stack
 class Stack:
     def __init__(self, N):
         self.top = - 1
         self.S = [0 for k in range(N)]
         pass
     
+    #Medoto stack_Empty
+    #retorna verdadeiro ou falso, 
+    #consonte a pilha estiver ou nao vazia
     def stack_Empty(self):
         if self.top == 0:
             return True
@@ -23,17 +25,13 @@ class Stack:
             pass
         pass
     
-    '''
-    Metodo Push
-    '''
+    #Metodo Push
     def Push(self, x):
         self.top += 1
         self.S[self.top] = x
         pass
     
-    '''
-    Metodo Pop
-    '''
+    #Metodo Pop
     def Pop(self):
         if self.stack_Empty():
             return "underflow"
