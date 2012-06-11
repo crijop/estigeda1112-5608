@@ -10,7 +10,10 @@ Class Main
 
 from NoRedBlack import *
 from ArvoreRedBlack import *
-
+from Stack import *
+from ArvoreBinariaLinkedList import *
+import ArvoreBinariaLinkedList
+import KdTree
 if __name__ == '__main__':
     
     nos = [None for k in range(10)]
@@ -71,3 +74,22 @@ if __name__ == '__main__':
     pass
     
     '''
+    
+    
+    '''
+    Construção da arvore com listas Ligadas
+    '''
+    
+    print '\nConstrução da arvore com listas Ligadas'
+    ArvoreBinariaLinkedList.Main()
+    
+    
+    '''
+    Class kd tree
+    '''
+    
+    print '\nConstruçao da arvore apartir da lista de dados'
+    KdTree.Main()
+    
+    
+    
