@@ -20,12 +20,14 @@ class ArvoreBinaria:
         self.root = None
         pass
 
-    #Metodo malloc   
+    #Metodo malloc, 
+    #aloca a memoria   
     def malloc(self):
         x = self.apontador_memoria.Pop()
         return x
     
-    #metodo free
+    #metodo free, 
+    #liberta a memoria
     def free(self,x):
         self.apontador_memoria.Push(x)
         pass
@@ -41,6 +43,7 @@ class ArvoreBinaria:
             pass
         return y
     
+    #metodo search
     def search(self, k):
         x = self.nos[k].parent
         while x != None and self.nos[x].key != k:
@@ -119,7 +122,7 @@ class ArvoreBinaria:
         pass
     pass
 
-
+#Metodo Main
 def Main():
     #Numero de elementos da arvore + 1 
     N = 11
@@ -202,6 +205,7 @@ def Main():
                                                                 str(arvore.nos[k].left), 
                                                                 str(arvore.nos[k].right))
     '''
+    '''
     print "Eliminar nó"
     
     # valor da posição da lista de nós
@@ -213,7 +217,7 @@ def Main():
     pass
 
     #Fim Main
-
+    '''
 
 #Main()
 
