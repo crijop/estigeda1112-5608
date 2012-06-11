@@ -2,28 +2,8 @@
 # -*- coding: utf-8 -*-
 
 from Stack import *
-
-
-#Class NoRedBlack 
-#cria um nó com uma key, valor e cor.
-#esse nó vai ter um left, um right e um
-#parent
-class NoRedBlack:
-    def __init__(self, key, valor, cor):
-        self.key    = key
-        self.valor  = valor
-        self.cor    = cor
-        
-        self.BLACK  = 0
-        self.RED    = 1
-        self.parent = None
-        self.left   = None
-        self.right  = None
-        pass
-    
-    pass
-    #FIM NoRedBlack
-    
+from NoRedBlack import *
+ 
 
 #Class ArvoreBinaria
 #cria a arvore, com um numero (N) de elementos 
@@ -65,7 +45,6 @@ class ArvoreBinaria:
         x = self.nos[k].parent
         while x != None and self.nos[x].key != k:
             x = self.nos[x].right
-            print "X ", x
         return x
         pass
 
@@ -213,8 +192,6 @@ def Main():
     print arvore
     
     
-    print arvore.search(9)
-    
     #outra forma para imprimir a arvore
     '''
     for k in range(11):
@@ -238,6 +215,6 @@ def Main():
     #Fim Main
 
 
-Main()
+#Main()
 
 

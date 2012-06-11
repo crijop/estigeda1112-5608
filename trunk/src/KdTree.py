@@ -1,18 +1,17 @@
-'''
-Created on 7 de Jun de 2012
-
-@author: admin1
-'''
-
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from ArvoreRedBlack import *
 from NoRedBlack import *
 
-class KdTree(ArvoreRedBlack):
+class KdTree(ArvorePesquisaBinaria):
     def __init__(self, tamanhoChave):
         super(KdTree, self).__init__()
         self.tamanhoChave = tamanhoChave
+        self.listaNos = []
+        self.nos = [ No(0, '') for k in range(6)]
+        #self.no = NoRedBlack(self.tamanhoChave, '', None)
         pass
-    
+     
     def insert_kdTree(self, z):
         super(KdTree, self).insert(z)
         pass
@@ -28,62 +27,62 @@ class KdTree(ArvoreRedBlack):
         super(KdTree, self).procurarVizinhos(x, k)
         pass
     
-    def maximum_kdTree(self, x):
-        pass
-    
-    def minimum_kdTree(self, x):
-        pass
-    
-    def sucessor_kdTree(self, x):
-        pass
     
     def inorder_walk_kdTree(self, x, lista):
         super(KdTree, self).inorder_walk(x, lista)
+        pass
+    
+       
+    def KdArvore(self, lKey, depth = 0 ):
+        
+        if not lKey:
+            return None
+        
+        k = len(lKey[0])
+        axis = depth % k
+        
+        lKey.sort(key = lambda point: point[axis])
+        median = len(lKey) // 2
+        no = No(0, '')
+        no.key = lKey[median]
+        no.left = self.KdArvore(lKey[:median], depth + 1)
+        no.right = self.KdArvore(lKey[median + 1:], depth + 1)
+        self.listaNos.append(no)
+        self.listaNos.sort()
+    
+        return no
         pass
     
     pass
 
 def Main():
     
-    kd = KdTree(2)
-    nos = [None for k in range(10)]
+    NUMERO_NOS = 6
+    nos = [None for k in range(NUMERO_NOS)]
+    #lista de chaves retiradas dos nos
+    listaChaves = []
     
+    nos[0] = No((2, 3), "Benfica")
+    nos[1] = No((5, 4), "Sporting")
+    nos[2] = No((9, 6), "Porto")
+    nos[3] = No((4, 7), "Academica")
+    nos[4] = No((8, 1), "Braga")
+    nos[5] = No((7, 2), "Olhanense")
     
-    nos[0] = NoRedBlack(11, "Renoir", None)
-    nos[1] = NoRedBlack(2, "van Gogh", None)
-    nos[2] = NoRedBlack(14, "Picasso", None)
-    nos[3] = NoRedBlack(1, "Manet", None)
-    nos[4] = NoRedBlack(7, "da Vinci", None)
-    nos[5] = NoRedBlack(15, "Miguel Angelo", None)
-    nos[6] = NoRedBlack(5, "Rafael", None)
-    nos[7] = NoRedBlack(8, "Goya", None)
-    nos[8] = NoRedBlack(4, "Turner", None)
-    nos[9] = NoRedBlack(6, "Tuqqwrner", None)
-    
-        
-    
-    
-    print "NIL"
-    print kd.nil
-    
-    kd.insert(nos[0])
-    kd.insert(nos[1])
-    kd.insert(nos[2])
-    kd.insert(nos[3])
-    kd.insert(nos[4])
-    kd.insert(nos[5])
-    kd.insert(nos[6])
-    kd.insert(nos[7])
-    kd.insert(nos[8])
-    kd.insert(nos[9])
-    
-    
-    print
-    print "INORDER"
-    lista = []
-    kd.inorder_walk_kdTree(kd.root, lista)
-    for x in lista:
-        print x
-    pass
+    NR_CHAVES = len(nos[0].key)
+    kd = KdTree(NR_CHAVES)
 
+    #retirar chaves dos nos e meter na lista de chaves
+    for k in range(NUMERO_NOS):
+        listaChaves.append(nos[k].key)
+    #fazer a arvore kd apartir da lista de chaves
+    kd.KdArvore(listaChaves)
+    
+    #imprimir a lista de Nos que contem a arvore kd 
+    #ja com a ordenaçao correcta   
+    for k in range(NUMERO_NOS):
+        print kd.listaNos[k]
+    
+    
+    
 Main()
