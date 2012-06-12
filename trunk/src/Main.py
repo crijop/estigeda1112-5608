@@ -83,12 +83,6 @@ if __name__ == '__main__':
     
     
     '''
-    Construção da arvore com listas Ligadas
-    '''
-    print '\nConstrução da arvore com listas Ligadas'
-    ArvoreBinariaLinkedList.Main()
-    
-    '''
     Class kd tree
     '''
     print '\nConstruçao da arvore apartir da lista de dados'

@@ -3,12 +3,12 @@
 
 from Stack import *
 from NoRedBlack import *
- 
+
 
 #Class ArvoreBinaria
 #cria a arvore, com um numero (N) de elementos 
 #que a arvore podera conter
-class ArvoreBinaria:
+class ArvoreBinaria(object):
     def __init__(self, N):
         self.apontador_memoria = Stack(N)
         for k in range(0, N):

@@ -26,7 +26,6 @@ class ArvorePesquisaBinaria(object):
         z.parent = self.nil
         z.left = self.nil
         z.right = self.nil
-        
         y = self.nil
         x = self.root
         
@@ -57,6 +56,7 @@ class ArvorePesquisaBinaria(object):
         else:
             return self.search(x.right, k)
         pass
+    
     
     #Metodo procuraVizinhos, recebe 
     #como parametro o no que se quer
