@@ -23,5 +23,5 @@ plt.title("Relacao entre o tempo(criacao da arvore)/numero de nos da arvore")
 
 grafico = plt.plot(listaNumNos, listaTempos, 'Dg')
 plt.grid(True)
-plt.savefig('NumeroDocentes200.png')
+plt.savefig('Grafico.png')
 plt.show()
