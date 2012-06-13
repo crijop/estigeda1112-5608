@@ -1,9 +1,21 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+'''
+Created on 2 de Junho de 2012
+
+@author: Carlos Palma Nº 5608
+
+Class KdTree
+'''
 from ArvoreRedBlack import *
+from No import *
 from NoRedBlack import *
 from Stack import *
-from No import *
+import random
+import time
+import os
+import pickle
 
 #class KdTree
 class KdTree(ArvorePesquisaBinaria):
@@ -188,6 +200,7 @@ class KdTree(ArvorePesquisaBinaria):
     
     pass
 
+
 #Metodo Main
 def Main():
     
@@ -227,6 +240,51 @@ def Main():
         pass
     
     print kd
+    
+    
+    '''
+    Estatisticas
+    '''
+    dados = []
+    lChav = []
+    for i in range(0, 10000, 1000):
+        for k in range(0, i ,100): 
+            k1 = random.randint(0, 100)
+            k2 = random.randint(0, 100)
+            chave = (k1, k2)
+            lChav.append(chave)
+            pass
+        #numero de nos a inserir na arvore
+        lenght = len(lChav)
+            
+        t1 = time.clock()
+        #inserir a lista de nos na arvore
+        kd.KdArvore(lChav)    
+        t2 = time.clock()
+        #actualizar a lista de dados (numero de nos, tempos)
+        dados.append((lenght, t2 - t1))
+    #lista de numero de nos    
+    listaNumNos = []
+    #lista de tempos a criar a arvore
+    listaTempos = []
+    for N, t in dados:
+        listaNumNos.append(N)
+        listaTempos.append(t)
+        pass
+    #ficheiro    
+    file = open("dados.dat", "w")
+    pickle.dump(listaNumNos, file)
+    pickle.dump(listaTempos, file)   
+    file.close()
+    # cria o grafico na directoria do programa
+    os.system("python Grafico.py")
+    
+    print "\nFoi criado o grafico da relaçao entre o tempo e numero "
+    print "de nos a inserir na arvore\n"
+    
+    '''
+    Fim de estatisticas
+    '''
     
     print "Eliminar nó com listas ligadas"
     
@@ -297,7 +355,5 @@ def Main():
     print "PESQUISA_Vizinhos "
     print kd.procurarVizinhos(kd.root, 5)
     pass
-    
-    
     
 #Main()

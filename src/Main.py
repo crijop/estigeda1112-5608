@@ -88,3 +88,13 @@ if __name__ == '__main__':
     print '\nConstruçao da arvore apartir da lista de dados'
     KdTree.Main()
     
+    
+    '''
+    Testes Estudo Experimental
+    '''
+    
+    
+    
+    
+    
+    
