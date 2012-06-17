@@ -6,6 +6,7 @@ Created on 2 de Junho de 2012
 
 @author: Carlos Palma Nº 5608
 
+Data da entrega 17 junho 2012
 Class KdTree
 '''
 from ArvoreRedBlack import *
@@ -256,7 +257,7 @@ def Main():
             pass
         #numero de nos a inserir na arvore
         lenght = len(lChav)
-            
+        print lenght    
         t1 = time.clock()
         #inserir a lista de nos na arvore
         kd.KdArvore(lChav)    
@@ -356,4 +357,4 @@ def Main():
     print kd.procurarVizinhos(kd.root, 5)
     pass
     
-#Main()
+Main()

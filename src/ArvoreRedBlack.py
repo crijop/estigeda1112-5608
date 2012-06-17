@@ -4,7 +4,7 @@
 Created on 21 de Mai de 2012
 
 @author: Carlos Palma Nº 5608
-
+Data da entrega 17 junho 2012
 Class ArvoreRedBlack
 '''
 from ArvorePesquisaBinaria import *

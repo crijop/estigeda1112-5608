@@ -1,6 +1,15 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+'''
+Created on 2 de Junho de 2012
+
+@author: Carlos Palma Nº 5608
+
+Data da entrega 17 junho 2012
+Class KdTree
+'''
+
 from Stack import *
 from NoRedBlack import *
 
