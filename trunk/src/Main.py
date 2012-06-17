@@ -4,7 +4,7 @@
 Created on 21 de Mai de 2012
 
 @author: Carlos Palma Nº 5608
-
+Data da entrega 17 junho 2012
 Class Main
 '''
 
@@ -88,10 +88,6 @@ if __name__ == '__main__':
     print '\nConstruçao da arvore apartir da lista de dados'
     KdTree.Main()
     
-    
-    '''
-    Testes Estudo Experimental
-    '''
     
     
     

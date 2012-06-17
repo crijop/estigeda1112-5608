@@ -3,7 +3,7 @@
 Created on 12 de junho de 2012
 
 @author: Carlos Palma Nº 5608
-
+Data da entrega 17 junho 2012
 Grafico da relaçao entre o tempo
 que leva a criar a arvore, e o numero de nos a 
 inserir na arvore
